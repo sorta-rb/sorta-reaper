@@ -14,6 +14,8 @@ require_relative "reaper/version"
 require_relative "reaper/entity/record_cfg"
 require_relative "reaper/entity/applyfx_cfg"
 require_relative "reaper/entity/notes"
+require_relative "reaper/entity/item"
+require_relative "reaper/entity/track"
 require_relative "reaper/entity/project"
 
 require_relative 'reaper/render/visitor'

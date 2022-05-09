@@ -6,7 +6,7 @@ module Sorta
   module Reaper
     module Entity
       class RecordCfg < Abstract
-        attribute :unnamed_1, Binary
+        attribute :unnamed_1, Binary.default("ZXZhdxgAAA==")
       end
     end
   end

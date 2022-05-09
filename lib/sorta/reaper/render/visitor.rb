@@ -34,6 +34,30 @@ module Sorta
           strings.join("\n")
         end
 
+        def visit_Track(obj)
+          strings = []
+          strings << "<TRACK {#{obj.trackid}}"
+
+          attrs = obj.attributes.dup.tap do |h|
+            h[:trackid] = "{#{obj.trackid}}"
+          end
+
+          strings << process_attributes(attrs)
+
+          strings << ">"
+          strings.join("\n")
+        end
+
+        def visit_Item(obj)
+          strings = []
+          strings << "<ITEM "
+
+          strings << process_attributes(obj.attributes)
+
+          strings << ">"
+          strings.join("\n")
+        end
+
         def visit_Notes(obj)
           "<NOTES #{obj.unnamed_1} #{obj.unnamed_2}\n>"
         end
@@ -48,11 +72,15 @@ module Sorta
 
         private
 
+        # Kill me [1]
         def process_attributes(attrs)
           strings = attrs.each_with_object([]) do |(key, value), acc|
             tmp =
-              if value.is_a? Entity::Abstract
+              case value
+              in Entity::Abstract
                 value.visit(self)
+              in [Entity::Abstract, *]
+                value.map { |v| v.visit(self) }.join("\n")
               else
                 "#{key.upcase} #{format_value(value)}"
               end
@@ -63,6 +91,7 @@ module Sorta
           strings.join("\n")
         end
 
+        # Kill me [2]
         def format_value(val)
           case val
           when Integer, Float
@@ -70,9 +99,9 @@ module Sorta
           when String
             "\"#{val}\""
           when Array
-            case val[0]
-            when Entity::Abstract
-              val.map { |entity| entity.visit(self) }.join("\n")
+            case val
+            in [Entity::Abstract, *]
+              value.map { |v| v.visit(self) }.join("\n")
             else
               val.join(" ")
             end

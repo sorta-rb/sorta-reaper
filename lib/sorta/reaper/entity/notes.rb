@@ -7,9 +7,9 @@ module Sorta
     module Entity
       class Notes < Abstract
         # 0
-        attribute :unnamed_1, Types::Integer
+        attribute :unnamed_1, Types::Integer.default(0)
         # 2
-        attribute :unnamed_2, Types::Integer
+        attribute :unnamed_2, Types::Integer.default(2)
       end
     end
   end
