@@ -58,6 +58,16 @@ module Sorta
           strings.join("\n")
         end
 
+        def visit_Source(obj)
+          strings = []
+          strings << "<SOURCE WAVE"
+
+          strings << process_attributes(obj.attributes)
+
+          strings << ">"
+          strings.join("\n")
+        end
+
         def visit_Notes(obj)
           "<NOTES #{obj.unnamed_1} #{obj.unnamed_2}\n>"
         end

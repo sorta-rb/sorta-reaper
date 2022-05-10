@@ -11,6 +11,7 @@ end
 
 require_relative "reaper/version"
 
+require_relative "reaper/entity/source"
 require_relative "reaper/entity/record_cfg"
 require_relative "reaper/entity/applyfx_cfg"
 require_relative "reaper/entity/notes"

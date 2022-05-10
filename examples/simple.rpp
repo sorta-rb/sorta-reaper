@@ -1,12 +1,15 @@
 <REAPER_PROJECT 0.1 "6.53/win64" 1651778831
-<TRACK {812edd73-2eeb-4906-9f4b-c46b864bf60b}
+<TRACK {0f9cd9c5-7bde-4b65-8e98-2f49f082c8b1}
 NAME "generated_track"
 <ITEM 
 POSITION 0
 LENGTH 10
-IGUID "c20e55d4-8976-40ea-a90f-ace17ba4dbe3"
+<SOURCE WAVE
+FILE "./test_audio.wav"
 >
-TRACKID "{812edd73-2eeb-4906-9f4b-c46b864bf60b}"
+IGUID "2d96f911-cb58-40b8-b4ee-8126a3017518"
+>
+TRACKID "{0f9cd9c5-7bde-4b65-8e98-2f49f082c8b1}"
 >
 <NOTES 0 2
 >

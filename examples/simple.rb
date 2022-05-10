@@ -2,7 +2,8 @@
 
 require_relative "../lib/sorta/reaper"
 
-item = Sorta::Reaper::Entity::Item.new(position: 0, length: 10)
+source = Sorta::Reaper::Entity::Source.new(file: File.join(__dir__, "./test_audio.wav"))
+item = Sorta::Reaper::Entity::Item.new(position: 0, length: 10, source: source)
 track = Sorta::Reaper::Entity::Track.new(name: "generated_track", items: [item])
 project = Sorta::Reaper::Entity::Project.new(tracks: [track])
 
