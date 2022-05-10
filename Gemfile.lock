@@ -1,7 +1,9 @@
 PATH
   remote: .
   specs:
-    sorta-reaper (0.1.0)
+    sorta-reaper (0.1.2)
+      dry-struct (~> 1.4.0)
+      dry-types (~> 1.5.1)
 
 GEM
   remote: https://rubygems.org/
@@ -70,8 +72,8 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  dry-struct
-  dry-types
+  dry-struct (~> 1.4.0)
+  dry-types (~> 1.5.1)
   rake (~> 13.0)
   rspec (~> 3.0)
   rubocop (~> 1.21)

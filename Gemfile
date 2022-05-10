@@ -11,5 +11,5 @@ gem "rspec", "~> 3.0"
 
 gem "rubocop", "~> 1.21"
 
-gem "dry-struct"
-gem "dry-types"
+gem "dry-struct", "~> 1.4.0"
+gem "dry-types", "~> 1.5.1"
