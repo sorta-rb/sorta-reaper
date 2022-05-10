@@ -15,6 +15,9 @@ module Sorta
         attribute? :name, Types::String
         attribute? :source, Source
 
+        # Start in source
+        attribute? :soffs, Types::Integer | Types::Float
+
         # <ITEM
         #   POSITION 3
         #   SNAPOFFS 0
