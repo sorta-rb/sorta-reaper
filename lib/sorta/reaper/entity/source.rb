@@ -8,6 +8,9 @@ module Sorta
       class Source < Abstract
         attribute? :file, Types::String
 
+        # WAVE, MP3, etc...
+        attribute? :format, Types::String
+
         #   <SOURCE WAVE
         #     FILE "C:\Users\odebe\Documents\REAPER Media\133\09-220503_1522.wav"
         #   >

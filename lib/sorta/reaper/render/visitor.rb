@@ -60,9 +60,10 @@ module Sorta
 
         def visit_Source(obj)
           strings = []
-          strings << "<SOURCE WAVE"
+          strings << "<SOURCE #{obj.format.upcase}"
 
-          strings << process_attributes(obj.attributes)
+          attrs = obj.attributes.except(:format)
+          strings << process_attributes(attrs)
 
           strings << ">"
           strings.join("\n")
